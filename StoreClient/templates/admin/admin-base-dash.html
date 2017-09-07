@@ -1,0 +1,39 @@
+﻿<div class="loader" ng-show="q">
+</div>
+<div class="container-fluid animate-bottom " ng-show="!q">
+    <div class="container row">
+        <div class="col-sm-6">
+            <div class="alert alert-dismissible alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h3>Attention !</h3>
+                <strong>Heads up!</strong> This requires your attention, Yo have {{noOfPendingUser}} Pending Users.
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h3>Attention !</h3>
+                <strong>Heads up!</strong> This requires your attention, Yo have {{noOfPendingAds}} pending Ads.
+            </div>
+        </div>
+    </div>
+
+    <div class="container row">
+        
+         <div class="col-sm-4">
+            <div class="card">
+
+                <div class="card-block">
+                    <h4 class="card-title"><i class="fa fa-check" aria-hidden="true"></i> Bookings</h4>
+                    <h5 class="card-title"> Total {{noofBookings}} were made so far</h5>
+                    <p class="card-text">A whooping number of  {{noofBookings}} were made from our paying Customers. </p>
+                    <hr />
+
+                    <a href="#" class="btn btn-outline-info"><i class="fa fa-check" aria-hidden="true"></i> Manage Bookings<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div >
+    
+</div>

@@ -1,0 +1,90 @@
+﻿<div class="loader" ng-show="q">
+
+</div>
+<div>
+    <div class="alert alert-success container-fluid" ng-show="success">
+        <strong>Success!</strong> {{name}} successfully inserted
+    </div>
+    <div class="alert alert-warning container-fluid" ng-show="fail">
+        <strong>Warning!</strong> Error inserting {{name}}
+    </div>
+</div>
+<div class="container-fluid animate-bottom" ng-show="!img">
+    <br />
+    <h2 style="text-align:center">{{header}}</h2>
+    <hr />
+    <form name="updateform">
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter First name" name="username" ng-model="UserModel.FirstName">
+            </div>
+            <div class="col-sm-6">
+                <label for="name">Last Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter First name" name="username" ng-model="UserModel.LastName">
+            </div>
+        </div>
+        <fieldset class="form-group" >
+            <legend>Gender</legend>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="Male"  checked="" ng-model="UserModel.Gender">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="Female" ng-model="UserModel.Gender">
+                    Female
+                </label>
+            </div>
+            <div class="form-check ">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="Prefer Not to say" ng-model="UserModel.Gender">
+                    Prefer Not to say
+                </label>
+            </div>
+        </fieldset>
+        <div class="form-group ">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" ng-model="UserModel.Email">
+            <small id="fileHelp" class="form-text text-muted">We'll never share email with anyone.</small>
+            <label style="color:red" ng-show="!updateform.email.$valid && updateform.email.$dirty">invalid Email</label>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Contact Number</label>
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount">Contact Number</label>
+                <div class="input-group">
+                    <div class="input-group-addon">Bangladesh</div>
+                    <div class="input-group-addon">+880</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Telephone Number" ng-model="UserModel.ContactNumber">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="showOrganisation">
+
+            <label for="lc">Organisation:</label>
+            <select class="form-control" id="sel1" ng-model="OrganisationId" ng-options="item as item.Name for item in organisationList track by item.Id">
+                <option>Select..</option>
+
+            </select>
+        </div>
+
+        <div class="form-group" ng-show="showPremium">
+
+            <label for="lc">Premium Member: </label>
+            <select class="form-control" id="sel1" ng-model="IsPremiumSeller" ng-options="item as item.Name for item in premiumList track by item.Id">
+                <option>Select..</option>
+
+            </select>
+        </div>
+
+
+        <input type="button" class="btn btn-primary btn-outline-success btn-large" value="Continue" ng-click="update()" />
+    </form>
+</div>
+
+

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileStore", "MobileStore\MobileStore.csproj", "{4AAE8496-86B1-4EEA-9DE6-3E9AE2C28338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreClient", "StoreClient\StoreClient.csproj", "{B3E1B15B-01E2-48A3-9537-F80E5FA7036E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AAE8496-86B1-4EEA-9DE6-3E9AE2C28338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAE8496-86B1-4EEA-9DE6-3E9AE2C28338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAE8496-86B1-4EEA-9DE6-3E9AE2C28338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAE8496-86B1-4EEA-9DE6-3E9AE2C28338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E1B15B-01E2-48A3-9537-F80E5FA7036E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E1B15B-01E2-48A3-9537-F80E5FA7036E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E1B15B-01E2-48A3-9537-F80E5FA7036E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E1B15B-01E2-48A3-9537-F80E5FA7036E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

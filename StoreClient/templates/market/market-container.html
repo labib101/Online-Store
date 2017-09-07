@@ -1,0 +1,30 @@
+﻿<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Gadget Store</a>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active" ng-repeat="ctg in categoryList">
+                <a class="nav-link" ui-sref="home.marketProductList.category" ui-sref-active="active">{{ctg.CategoryName}} <span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item active" >
+                <a class="nav-link" ui-sref="auth.new" ui-sref-active="active">Become A Member Now <span class="sr-only">(current)</span></a>
+            </li>
+
+        </ul>
+        <form class="form-inline">
+            <button class="btn btn-success btn-lg" ui-sref="auth.login"><i class="fa fa-sign-out" aria-hidden="true"></i>Login</button>
+        </form>
+    </div>
+</nav>
+
+<ui-view></ui-view>
+
+<hr />
+<div class="container-fluid">
+    <center>All Right Reserved 2017</center>
+</div>
