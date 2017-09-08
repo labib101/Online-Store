@@ -8,7 +8,7 @@ namespace MobileStore.DAL
 {
     public class ModelCreation
     {
-        public AuthModel auth = new AuthModel();
+        private AuthModel auth = new AuthModel();
 
         public AuthModel Create(Customer customer)
         {

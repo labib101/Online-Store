@@ -13,7 +13,7 @@ namespace MobileStore.Controllers
     [RoutePrefix("api/Authentication")]
     public class AuthenticationController : ApiController
     {
-        public StoreDbContext ctx = new StoreDbContext();
+        private StoreDbContext ctx = new StoreDbContext();
         private UnitOfWork unitOfWork = new UnitOfWork();
 
         [HttpPost]

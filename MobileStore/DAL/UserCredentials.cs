@@ -9,8 +9,8 @@ namespace MobileStore.DAL
 {
     public class UserCredentials :RandomNumber
     {
-        public UnitOfWork unitOfWork = new UnitOfWork();
-        public ModelCreation modelCreation = new ModelCreation();
+        private UnitOfWork unitOfWork = new UnitOfWork();
+        private ModelCreation modelCreation = new ModelCreation();
 
         //Code to Create UserCredentials of the Organisation
         public string create(Admins admins)
