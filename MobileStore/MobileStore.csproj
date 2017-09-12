@@ -163,6 +163,7 @@
     <Compile Include="Models\Sales.cs" />
     <Compile Include="Models\StoreDbContext.cs" />
     <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\UpdatePasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -51,6 +51,10 @@ namespace MobileStore.Controllers
         [ActionName("getSubCategoryList")]
         public IEnumerable<SubCategory> getSubCategoryList() { return unitOfWork.SubCategoryRepository.Get(); }
 
+        [HttpGet]
+        [ActionName("test")]
+        public IEnumerable<LoginAuthentications> test() { return unitOfWork.LoginAuthenticationRepository.Get(); }
+
         protected override void Dispose(bool disposing)
         {
             unitOfWork.Dispose();

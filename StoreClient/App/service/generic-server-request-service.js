@@ -34,4 +34,11 @@
             );
     }
 
+    this.updatePassword = function (data, path) {
+        return $http.post(
+            'http://localhost/mobilestore/api/Authentication/' + path,
+            data
+        );
+    }
+
 }])

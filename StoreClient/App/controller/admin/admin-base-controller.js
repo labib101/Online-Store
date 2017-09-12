@@ -1,5 +1,6 @@
-﻿app.controller('adminBaseController', ['$scope', '$state', 'localStorageService','adminGenericService',
-    function ($scope, $state, localStorageService, adminGenericService) {
+﻿app.controller('adminBaseController', ['$scope', '$state', 'localStorageService', 'adminGenericService',
+    'genericService',
+    function ($scope, $state, localStorageService, adminGenericService, genericService) {
 
     $scope.q = true;
 
@@ -7,7 +8,7 @@
     
     
 
-    adminGenericService.getRandomQuote().then(function (promise) {
+    genericService.getRandomQuote().then(function (promise) {
         
         $scope.quote = promise;
         console.log(promise);
@@ -20,9 +21,9 @@
         });
     });
 
-    $scope.adminInfo = adminGenericService.getAdminInfo();
+    $scope.adminInfo = genericService.getUserInfo();
 
-    $scope.days = adminGenericService.getUpdatePasswordStatus($scope.adminInfo.LastUpdate);
+    $scope.days = genericService.getUpdatePasswordStatus($scope.adminInfo.LastUpdate);
 
     $scope.generatePassword = function () {
 
@@ -31,7 +32,7 @@
     
 
     $scope.logout = function () {
-        adminGenericService.logout();
+        genericService.logout();
     }
 
     

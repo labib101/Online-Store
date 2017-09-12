@@ -1,1 +1,83 @@
-﻿
+﻿<nav class="navbar navbar-toggleable-md navbar-light bg-primary">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" ng-click="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</button>
+        </form>
+    </div>
+</nav>
+<br />
+<div class="row container-fluid">
+    <div class="col-sm-9">
+        <ui-view></ui-view>
+    </div>
+    <div class="col-sm-3" ng-view="!q">
+        <div class="affix ">
+
+            <div class="card ">
+                <h3 class="card-header text-center">Profile <i class="fa fa-wrench" aria-hidden="true"></i></h3>
+                <div class="card-block card-inverse card-danger">
+                    <h5 class="card-title text-center">Welcome</h5>
+                    <h6 class="card-subtitle  text-center">{{UserInfo.Email}}</h6>
+                </div>
+                <div class="card-block card-outline-success">
+                    <blockquote class="blockquote blockquote-reverse" ng-repeat="x in quote">
+                        <p>{{x.content}}</p>
+                        <footer class="blockquote-footer"> <cite title="Source Title">{{x.title}}</cite></footer>
+                    </blockquote>
+                    <button type="button" class="btn btn-outline-danger" ng-click="togglePassword()">Update <i class="fa fa-key" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-outline-info"><i class="fa fa-history" aria-hidden="true"></i> History</button>
+                </div>
+                <div class="card-footer text-muted text-xs-center">
+                    Password Updated <strong>{{days}} day </strong>ago
+                </div>
+                
+            </div>
+            <br />
+            <div class="alert alert-dismissible alert-success" ng-show="confirmation">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Well done!</strong> You have successfully updated your password 
+            </div>
+            <div class="card animate-bottom" ng-show="changePassword">
+                <h3 class="card-header text-center">Update <i class="fa fa-key" aria-hidden="true"></i></h3>
+                <div class="card-block card-inverse card-success">
+
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label" for="inputSmall">Previous Password</label>
+                        <input class="form-control form-control" type="password" id="inputSmall" ng-model="OldPassword">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label" for="inputSmall">New Password</label>
+                        <input class="form-control form-control" type="password" id="inputSmall" ng-model="NewPassword">
+                    </div>
+                    <div class="form-group">
+                        <p style="color:red">{{errorMsg}}</p>
+                    </div>
+                </div>
+
+                <div class="card-block text-xs-center">
+                    <button type="button" class="btn btn-outline-success" ng-click="generatePassword()"><i class="fa fa-check" aria-hidden="true"></i> Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

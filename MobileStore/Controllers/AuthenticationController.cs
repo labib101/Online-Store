@@ -15,6 +15,7 @@ namespace MobileStore.Controllers
     {
         private StoreDbContext ctx = new StoreDbContext();
         private UnitOfWork unitOfWork = new UnitOfWork();
+        private UserCredentials userCredentials = new UserCredentials();
 
         [HttpPost]
         [ActionName("login")]
@@ -54,7 +55,6 @@ namespace MobileStore.Controllers
             if(check!= null)
             {
 
-                UserCredentials userCredentials = new UserCredentials();
                 userCredentials.forget(check);
                 return Ok("Please Check Email for further Instructions");
 
@@ -62,6 +62,24 @@ namespace MobileStore.Controllers
             else
             {
                 return Ok("No Matching Account");
+            }
+        }
+
+        [HttpPost]
+        [ActionName("changePassword")]
+        public IHttpActionResult changePassword(UpdatePasswordModel updatePasswordModel)
+        {
+            LoginAuthentications check = unitOfWork.LoginAuthenticationRepository.GetByID(updatePasswordModel.Email);
+            if (check != null)
+            {
+
+                userCredentials.changePassword(check, updatePasswordModel);
+                return Ok("Password Updated Successfully");
+
+            }
+            else
+            {
+                return Ok("Error Occured");
             }
         }
 

@@ -38,8 +38,7 @@
 
             } else if (resp.AuthToken == "Customer") {
 
-                
-                $state.go('auth.admin.home');
+                $state.go('auth.user.home');
             } else if (resp.AuthToken == "Organisation") {
 
             }

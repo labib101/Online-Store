@@ -102,6 +102,8 @@
     <Content Include="App\service\login-service.js" />
     <Content Include="App\service\market-service.js" />
     <Content Include="App\service\set-new-entity-service.js" />
+    <Content Include="App\service\shared\generic-services.js" />
+    <Content Include="App\service\user\user-generic-service.js" />
     <Content Include="images\android-desktop.png" />
     <Content Include="images\dog.png" />
     <Content Include="images\favicon.png" />
@@ -935,10 +937,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\service\shared\" />
-    <Folder Include="App\service\user\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

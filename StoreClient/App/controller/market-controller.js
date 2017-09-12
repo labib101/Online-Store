@@ -1,4 +1,5 @@
-﻿app.controller('marketBaseController', ['getMarketService','$scope', function (getMarketService,$scope) {
+﻿app.controller('marketBaseController', ['getMarketService', '$scope', 'ServerRequestService',
+    function (getMarketService, $scope, ServerRequestService) {
     console.log("marketBaseController Loaded");
 
     $scope.premiumAds = [];
@@ -9,7 +10,9 @@
         $scope.categoryList = promise;
     });
 
-    
+    ServerRequestService.getMarketItems('test').then(function (response) {
+        console.log(response);
+    });
 
 }]);
 

@@ -80,6 +80,7 @@ namespace MobileStore.DAL
             }
             else if(method == "update")
             {
+                loginAuthentications.LastUpdate = DateTime.Now.ToString();
                 unitOfWork.LoginAuthenticationRepository.Update(loginAuthentications);
             }
 
@@ -98,7 +99,8 @@ namespace MobileStore.DAL
                                    "<h3>welcome to the Store. "+type+" </br> " +
                                    "The Random Password for you Sign in is <b>" + password + "</b></h3>"+
                                    "<p>Thank You for Staying With us</p>"+
-                                   "Mail Sent at " + authModel.IssueDate;
+                                   "Mail Sent at " + authModel.IssueDate + "</br>"+
+                                   "@copyright Shuorer Baccha ";
 
             MailConfig conf = new MailConfig();
 
@@ -114,8 +116,7 @@ namespace MobileStore.DAL
             string type = "We are sorry to hear that you've lost your password.";
             string Password = Generate().ToString();
             loginAuthentications.Password = Password;
-            loginAuthentications.LastUpdate = DateTime.Now.ToString();
-
+            
             createAuthentication(loginAuthentications, "update");
 
             AuthModel authModel = modelCreation.Create(loginAuthentications);
@@ -124,6 +125,19 @@ namespace MobileStore.DAL
             if (mailStatus == "Success") { return "success"; }
             else { return "Error Occurred Inserting Value"; }
 
+        }
+
+        public string changePassword(LoginAuthentications loginAuthentications, UpdatePasswordModel updatePasswordModel)
+        {
+            string type = "Your Request for changing password was successful. </br> If you believe that this is a mistake, Contact us";
+            loginAuthentications.Password =  updatePasswordModel.NewPassword;
+            createAuthentication(loginAuthentications, "update");
+
+            AuthModel authModel = modelCreation.Create(loginAuthentications);
+            string mailStatus = SendMail(authModel, updatePasswordModel.NewPassword, type);
+
+            if (mailStatus == "Success") { return "success"; }
+            else { return "Error Occurred Inserting Value"; }
         }
 
     }
